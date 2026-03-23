@@ -1,0 +1,213 @@
+/* Styles for the Place Template Page */
+.place-hero {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 60px;
+}
+
+.place-hero-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect purely with CSS */
+    z-index: 1;
+}
+
+.place-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(30,58,95,0.9) 0%, rgba(30,58,95,0.2) 100%);
+    z-index: 2;
+}
+
+.place-hero-content {
+    position: relative;
+    z-index: 3;
+    color: var(--color-white);
+}
+
+.place-hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.place-hero-content .tagline {
+    font-size: 1.3rem;
+    font-weight: 400;
+    max-width: 600px;
+    opacity: 0.9;
+}
+
+/* Quick Info Bar */
+.quick-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    background-color: var(--color-white);
+    padding: 30px 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 40px rgba(30,58,95,0.05);
+    margin-top: -100px; /* Overlap hero */
+    position: relative;
+    z-index: 10;
+    margin-bottom: 60px;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-icon {
+    font-size: 2rem;
+    background-color: var(--color-bg);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.info-text h4 {
+    font-size: 0.9rem;
+    color: var(--color-text-gray);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-text p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+}
+
+/* Content Split */
+.place-content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.place-details h2 {
+    font-size: 2.2rem;
+    color: var(--color-secondary);
+    margin-bottom: 16px;
+}
+
+.place-details p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-gray);
+    margin-bottom: 24px;
+}
+
+.place-details h3 {
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+    margin: 40px 0 20px;
+}
+
+.facts-list {
+    list-style: none;
+}
+
+.facts-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+}
+
+.facts-list li::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--color-primary);
+}
+
+/* Mini Gallery */
+.mini-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.mini-gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.mini-gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Sidebar Sustainability */
+.sustainability-box {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 32px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 15px 30px rgba(58,125,68,0.2);
+}
+
+.box-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 16px;
+}
+
+.box-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.box-header .icon {
+    font-size: 2rem;
+}
+
+.tip-item {
+    margin-bottom: 20px;
+}
+
+.tip-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--color-primary);
+}
+
+.tip-item p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.9);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .quick-info, .place-content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .place-main {
+        padding: 0 20px;
+    }
+}

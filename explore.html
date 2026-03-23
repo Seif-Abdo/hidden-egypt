@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore - Hidden Egypt</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/explore.css">
+</head>
+<body>
+
+
+    <header class="page-header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo-container-relative">
+                <a href="index.html">
+                    <img src="logo.png" alt="Hidden Egypt" class="img-logo relative-logo">
+                </a>
+            </div>
+            <nav class="main-nav" style="margin-bottom: 0;">
+                <ul class="nav-links" id="sub-nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explore.html" class="active">Explore</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+                <div class="menu-toggle" onclick="document.getElementById('sub-nav-links').classList.toggle('active')">
+                    <span></span><span></span><span></span>
+                </div>
+                <a href="contact.html" class="btn nav-contact" style="padding: 10px 24px; font-size: 0.95rem;">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+
+    
+
+    <main class="explore-main container">
+        <!-- Pure CSS Filtering Hack -->
+        <div id="filter-all" style="position: absolute; top: -200px;"></div>
+        <div id="filter-sinai" style="position: absolute; top: -200px;"></div>
+        <div id="filter-desert" style="position: absolute; top: -200px;"></div>
+        <div id="filter-nile" style="position: absolute; top: -200px;"></div>
+
+        <!-- Filter Buttons (Labels tied to hidden radios) -->
+        <div class="filter-controls" id="filterBtnContainer">
+    <button class="filter-chip active" data-filter="all">All Regions</button>
+    <button class="filter-chip" data-filter="item-sinai">Sinai Peninsula</button>
+    <button class="filter-chip" data-filter="item-desert">Western Desert</button>
+    <button class="filter-chip" data-filter="item-nile">Nile Valley</button>
+</div>
+
+        <div class="grid-container">
+            <!-- Sinai Card 1 -->
+            <a href="ras-abu-galum.html" class="grid-item item-sinai">
+                <div class="card-inner">
+                    <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1543320147-3dc61298c9dc?q=80&w=600');"></div>
+                    <div class="card-content">
+                        <h3>Ras Abu Galum</h3>
+                        <p class="region">South Sinai</p>
+                        <div class="hover-details">
+                            <p>A secluded protectorate accessible only by camel or boat, featuring spectacular untouched coral reefs.</p>
+                            <span class="btn-text">View details</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Desert Card 1 -->
+            <a href="white-desert.html" class="grid-item item-desert">
+                <div class="card-inner">
+                    <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1539650116574-8efeb43e2750?q=80&w=600');"></div>
+                    <div class="card-content">
+                        <h3>White Desert</h3>
+                        <p class="region">Farafra</p>
+                        <div class="hover-details">
+                            <p>Massive, surreal chalk rock formations created by centuries of wind and sand storms.</p>
+                            <span class="btn-text">View details</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Nile Card 1 -->
+            <a href="dendera.html" class="grid-item item-nile">
+                <div class="card-inner">
+                    <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1600375990520-4e314ce17a3a?q=80&w=600');"></div>
+                    <div class="card-content">
+                        <h3>Dendera Temple</h3>
+                        <p class="region">Qena</p>
+                        <div class="hover-details">
+                            <p>One of the best-preserved temple complexes in Egypt, housing the famous vibrantly colored astronomical zodiac ceiling.</p>
+                            <span class="btn-text">View details</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Desert Card 2 -->
+            <a href="siwa.html" class="grid-item item-desert">
+                <div class="card-inner">
+                    <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1572252009286-268acec5b8d0?q=80&w=600');"></div>
+                    <div class="card-content">
+                        <h3>Siwa Oasis</h3>
+                        <p class="region">Western Desert</p>
+                        <div class="hover-details">
+                            <p>Bathe in natural hot springs and explore an ancient civilization surrounded by the Great Sand Sea.</p>
+                            <span class="btn-text">View details</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Sinai Card 2 -->
+            <a href="colored-canyon.html" class="grid-item item-sinai">
+                <div class="card-inner">
+                    <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1621250325308-540203f6f3cc?q=80&w=600');"></div>
+                    <div class="card-content">
+                        <h3>Colored Canyon</h3>
+                        <p class="region">Nuweiba</p>
+                        <div class="hover-details">
+                            <p>A mesmerising maze of sandstone rocks tinged with brilliant hues of yellow, purple, red, and gold.</p>
+                            <span class="btn-text">View details</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Nile Card 2 -->
+            <a href="tunis.html" class="grid-item item-nile">
+                <div class="card-inner">
+                    <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1533052136932-6aeb851722cb?q=80&w=600');"></div>
+                    <div class="card-content">
+                        <h3>Tunis Village</h3>
+                        <p class="region">Fayoum</p>
+                        <div class="hover-details">
+                            <p>An inspiring eco-village famous for its pottery, artistic community, and views over Lake Qarun.</p>
+                            <span class="btn-text">View details</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+</body>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <h2 style="color: var(--color-secondary);">Hidden Egypt</h2>
+                <p>Discover Egypt Beyond the Famous.</p>
+            </div>
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hidden Egypt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

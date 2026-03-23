@@ -1,0 +1,221 @@
+/* Additional styles for explore.html */
+.page-header {
+    background-color: var(--color-bg);
+    padding: 20px 0 60px;
+    border-bottom: 1px solid rgba(30,58,95,0.05);
+}
+
+.page-header .main-nav {
+    justify-content: space-between; /* Override from style.css */
+    margin-bottom: 80px;
+}
+
+.logo-container-relative {
+    display: flex;
+    align-items: center;
+}
+
+.relative-logo {
+    height: 48px;
+    filter: none;
+    mix-blend-mode: normal; 
+    border-radius: 8px;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-gray);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.explore-main {
+    padding: 80px 40px;
+    background-color: var(--color-bg);
+    min-height: calc(100vh - 350px);
+}
+
+/* Base Radios hidden */
+input[type="radio"][name="region"] {
+    display: none;
+}
+
+/* Filter Controls */
+.filter-controls {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.filter-chip {
+    padding: 12px 28px;
+    border-radius: 40px;
+    background-color: var(--color-white);
+    color: var(--color-secondary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.filter-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* Active State Logic for Chips */
+
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+/* Grid Items & Hover Details */
+.grid-item {
+    display: block;
+    height: 450px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(30,58,95,0.08);
+    transition: var(--transition);
+}
+
+.grid-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(30,58,95,0.15);
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.8s ease;
+    z-index: 1;
+}
+
+.grid-item:hover .card-bg {
+    transform: scale(1.08);
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 30px;
+    background: linear-gradient(to top, rgba(30,58,95, 0.95) 0%, rgba(30,58,95, 0.4) 60%, transparent 100%);
+    color: var(--color-white);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    transform: translateY(40px);
+    transition: transform 0.4s ease;
+    color: var(--color-white);
+}
+
+.card-content .region {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    transform: translateY(40px);
+    transition: transform 0.4s ease 0.05s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hover-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease 0.1s;
+}
+
+.hover-details p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    color: rgba(255,255,255,0.85);
+}
+
+.btn-text {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-text::after {
+    content: '→';
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect triggers */
+.grid-item:hover .card-content h3,
+.grid-item:hover .card-content .region {
+    transform: translateY(0);
+}
+
+.grid-item:hover .hover-details {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+.grid-item:hover .btn-text::after {
+    transform: translateX(5px);
+}
+
+/* Filtering logic purely with CSS */
+#filter-sinai:target ~ .grid-container .grid-item:not(.item-sinai) {
+    display: none;
+}
+#filter-desert:target ~ .grid-container .grid-item:not(.item-desert) {
+    display: none;
+}
+#filter-nile:target ~ .grid-container .grid-item:not(.item-nile) {
+    display: none;
+}
+
+
+
+
+.filter-chip.active { background-color: var(--color-secondary); color: var(--color-white); border-color: var(--color-secondary); }

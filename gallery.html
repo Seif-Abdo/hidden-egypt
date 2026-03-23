@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Hidden Egypt</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/explore.css"> <!-- Reusing header styles -->
+    <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+
+
+    <header class="page-header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo-container-relative">
+                <a href="index.html">
+                    <img src="logo.png" alt="Hidden Egypt" class="img-logo relative-logo">
+                </a>
+            </div>
+            <nav class="main-nav" style="margin-bottom: 0;">
+                <ul class="nav-links" id="sub-nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+                <div class="menu-toggle" onclick="document.getElementById('sub-nav-links').classList.toggle('active')">
+                    <span></span><span></span><span></span>
+                </div>
+                <a href="contact.html" class="btn nav-contact" style="padding: 10px 24px; font-size: 0.95rem;">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+
+    
+
+    <main class="gallery-main container">
+        <div class="gallery-grid">
+            
+            <!-- Gallery Item 1 -->
+            <a href="#lightbox-1" class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1552309398-fd0f5d4e35be?q=80&w=800" alt="Siwa Oasis">
+                <div class="item-overlay"><span>Siwa Oasis</span></div>
+            </a>
+            <div class="lightbox" id="lightbox-1">
+                <a href="#!" class="lightbox-close" title="Close"></a>
+                <div class="lightbox-content">
+                    <img src="https://images.unsplash.com/photo-1542365516-e358b4f95d92?q=80&w=800" alt="Siwa Oasis Full">
+                    <h3>Siwa Oasis</h3>
+                    <a href="place-template.html" class="btn btn-primary" style="margin-top: 16px;">View Destination &xrarr;</a>
+                </div>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <a href="#lightbox-2" class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1547013406-e6a8f98bde65?q=80&w=800" alt="White Desert">
+                <div class="item-overlay"><span>White Desert</span></div>
+            </a>
+            <div class="lightbox" id="lightbox-2">
+                <a href="#!" class="lightbox-close" title="Close"></a>
+                <div class="lightbox-content">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=800" alt="White Desert Full">
+                    <h3>White Desert</h3>
+                    <a href="place-template.html" class="btn btn-primary" style="margin-top: 16px;">View Destination &xrarr;</a>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <a href="#lightbox-3" class="gallery-item" style="grid-row: span 2;">
+                <img src="https://images.unsplash.com/photo-1562679302-6c6f03173bf5?q=80&w=800" alt="Colored Canyon">
+                <div class="item-overlay"><span>Colored Canyon</span></div>
+            </a>
+            <div class="lightbox" id="lightbox-3">
+                <a href="#!" class="lightbox-close" title="Close"></a>
+                <div class="lightbox-content">
+                    <img src="https://images.unsplash.com/photo-1533052136932-6aeb851722cb?q=80&w=800" alt="Colored Canyon Full">
+                    <h3>Colored Canyon</h3>
+                    <a href="place-template.html" class="btn btn-primary" style="margin-top: 16px;">View Destination &xrarr;</a>
+                </div>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <a href="#lightbox-4" class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1572252009286-268acec5b8d0?q=80&w=800" alt="Ras Abu Galum">
+                <div class="item-overlay"><span>Ras Abu Galum</span></div>
+            </a>
+            <div class="lightbox" id="lightbox-4">
+                <a href="#!" class="lightbox-close" title="Close"></a>
+                <div class="lightbox-content">
+                    <img src="https://images.unsplash.com/photo-1600375990520-4e314ce17a3a?q=80&w=800" alt="Ras Abu Galum Full">
+                    <h3>Ras Abu Galum</h3>
+                    <a href="place-template.html" class="btn btn-primary" style="margin-top: 16px;">View Destination &xrarr;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+</body>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <h2 style="color: var(--color-secondary);">Hidden Egypt</h2>
+                <p>Discover Egypt Beyond the Famous.</p>
+            </div>
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hidden Egypt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

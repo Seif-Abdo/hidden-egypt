@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colored Canyon - Hidden Egypt</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/explore.css">
+    <link rel="stylesheet" href="css/place.css">
+</head>
+<body>
+
+
+    <header class="page-header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo-container-relative">
+                <a href="index.html">
+                    <img src="logo.png" alt="Hidden Egypt" class="img-logo relative-logo">
+                </a>
+            </div>
+            <nav class="main-nav" style="margin-bottom: 0;">
+                <ul class="nav-links" id="sub-nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+                <div class="menu-toggle" onclick="document.getElementById('sub-nav-links').classList.toggle('active')">
+                    <span></span><span></span><span></span>
+                </div>
+                <a href="contact.html" class="btn nav-contact" style="padding: 10px 24px; font-size: 0.95rem;">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+
+    
+
+    <div class="place-hero">
+        <div class="place-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1547013406-e6a8f98bde65?q=80&w=1600');"></div>
+        <div class="place-hero-overlay"></div>
+        <div class="place-hero-content container">
+            <h1>Colored Canyon</h1>
+            <p class="tagline">A breathtaking maze of vividly colored sandstone rocks in the Sinai Peninsula</p>
+        </div>
+    </div>
+
+    <main class="place-main container">
+        
+        <div class="quick-info">
+            <div class="info-card">
+                <div class="info-icon">📍</div>
+                <div class="info-text">
+                    <h4>Location</h4>
+                    <p>Nuweiba, South Sinai</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">⏳</div>
+                <div class="info-text">
+                    <h4>Best Time to Visit</h4>
+                    <p>September to May</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🥾</div>
+                <div class="info-text">
+                    <h4>Perfect For</h4>
+                    <p>Hiking, Adventure, Geology</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="place-content-wrapper">
+            <div class="place-details">
+                <h2>About the Colored Canyon</h2>
+                <div class="divider"></div>
+                <p>Hidden deep within the Sinai desert mountains near Nuweiba, the Colored Canyon is a spectacularly beautiful labyrinth of sandstone rocks tinged with vibrant shades of yellow, purple, red, and gold. The canyon reaches depths of nearly 40 meters and provides an unforgettable hiking experience.</p>
+                <p>Formed over millions of years by water erosion from ancient rivers and winter rains, the smooth, colorful, and undulating walls of the canyon make hikers feel as though they are walking through a living geological painting.</p>
+
+                <h3>Interesting Facts</h3>
+                <ul class="facts-list">
+                    <li>The brilliant colors in the sandstone are produced by copper, iron, cobalt, and magnesium deposits.</li>
+                    <li>In some places, the canyon narrows down so much that visitors must squeeze through single file.</li>
+                    <li>Unlike many modern trails, this region has been known to the indigenous Bedouin tribes for centuries as a natural shelter.</li>
+                </ul>
+
+                <h3 style="margin-top: 40px; margin-bottom: 20px;">Photo Highlights</h3>
+                <div class="mini-gallery">
+                    <img src="https://images.unsplash.com/photo-1621250325308-540203f6f3cc?w=600" alt="Canyon Path">
+                    <img src="https://images.unsplash.com/photo-1632766863071-7cde2223bb35?w=600" alt="Red Rocks">
+                <img src="https://images.unsplash.com/photo-1543320147-3dc61298c9dc?q=80&w=600" alt="Beautiful landscape" style="margin-top:20px; width:100%; height:250px; object-fit:cover; border-radius:12px;">
+</div>
+            </div>
+
+            <aside class="place-sidebar">
+                <div class="sustainability-box">
+                    <div class="box-header">
+                        <span class="icon">🌱</span>
+                        <h3>Sustainability Tips</h3>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Responsible Visiting</h4>
+                        <p>Stay on marked trails while hiking. Deviating not only damages the fragile desert ecosystem but is also dangerous in remote mountainous areas.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Support Local Businesses</h4>
+                        <p>Always hire a local Bedouin guide. The financial support strengthens the local community and they offer unparalleled navigational expertise.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Environmental Notes</h4>
+                        <p>Avoid taking "souvenir rocks" from the canyon. The beauty lies in the intact formations. Ensure that absolutely no waste is left behind.</p>
+                    </div>
+                </div>
+
+                <div class="map-miniature" style="margin-top: 40px;">
+                    <h3 style="margin-bottom: 16px; color: var(--color-secondary);">Map View</h3>
+                    <a href="discover-map.html" style="display: block; border-radius: var(--border-radius); overflow: hidden; position: relative;">
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=500" alt="Map" style="width:100%; height: 200px; object-fit: cover; filter: brightness(0.9) contrast(1.1);">
+                        <div style="position: absolute; top: 28%; left: 77%; width: 16px; height: 16px; background: var(--color-accent); border-radius: 50%; border: 3px solid white; transform: translate(-50%, -50%);"></div>
+                    </a>
+                </div>
+            </aside>
+        </div>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <h2 style="color: var(--color-secondary);">Hidden Egypt</h2>
+                <p>Discover Egypt Beyond the Famous.</p>
+            </div>
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hidden Egypt. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
