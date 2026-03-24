@@ -736,6 +736,12 @@ body.body-hero .desktop-only-contact .btn {
     animation: slideDown 0.3s ease forwards;
 }
 
+/* Ensure mobile menu links are dark and readable even on hero pages */
+.nav-toggle-input:checked ~ header .nav-links li a {
+    color: var(--color-secondary) !important;
+    text-shadow: none !important;
+}
+
 @keyframes slideDown {
     from { opacity: 0; transform: translateY(-10px) scaleY(0.95); }
     to   { opacity: 1; transform: translateY(0) scaleY(1); }
@@ -769,10 +775,17 @@ body.body-hero .desktop-only-contact .btn {
 }
 
 /* ── Subpage narrow header (Explore, Gallery, About, Contact) ──────────────── */
-.page-header .container {
+body:not(.body-hero) .page-header .container {
     max-width: 1000px;
     margin: 0 auto;
     width: 100%;
+}
+
+/* Let the destination page headers stretch to layout edges */
+body.body-hero .page-header .container {
+    max-width: none;
+    width: 100%;
+    padding: 0 40px; 
 }
 
 @media (max-width: 768px) {
@@ -847,7 +860,7 @@ body.body-hero .desktop-only-contact .btn {
 .desktop-only-contact { display: block; }
 
 @media (max-width: 768px) {
-    /* Header Transparency Fix */
+    /* Header Transparency Fix for Subpages */
     .page-header {
         background: rgba(255, 255, 255, 0.98) !important;
         backdrop-filter: blur(12px) !important;
@@ -856,6 +869,11 @@ body.body-hero .desktop-only-contact .btn {
         position: sticky !important;
         top: 0 !important;
         z-index: 9999 !important;
+        padding: 15px 20px !important; /* Essential specific fix for mobile width clipping */
+    }
+    
+    body.body-hero .page-header .container {
+        padding: 0 !important;
     }
 
     /* Hero Overlap Fix */
