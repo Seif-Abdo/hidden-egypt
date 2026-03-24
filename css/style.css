@@ -677,10 +677,27 @@ body.body-hero .page-header {
 
 body.body-hero .nav-links li a {
     color: var(--color-white) !important;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+}
+
+/* Frosted glass pill behind logo so it's always readable over any hero photo */
+body.body-hero .logo-container-relative {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 40px;
+    padding: 6px 14px 6px 6px;
+    transition: background 0.3s ease;
+}
+
+body.body-hero .logo-container-relative:hover {
+    background: rgba(255, 255, 255, 0.25);
 }
 
 body.body-hero .img-logo {
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+    /* No filter needed — logo sits in frosted pill */
+    filter: none;
 }
 
 body.body-hero .menu-toggle span {
@@ -688,9 +705,12 @@ body.body-hero .menu-toggle span {
 }
 
 body.body-hero .desktop-only-contact .btn {
-    border-color: rgba(255,255,255,0.3);
-    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     color: white;
+    border-radius: 40px;
 }
 
 @media (max-width: 768px) {
