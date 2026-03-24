@@ -714,18 +714,40 @@ body.body-hero .desktop-only-contact .btn {
 }
 
 /* ── Pure CSS Hamburger Menu (No JavaScript) ─────────────────────────────── */
-/* Hidden checkbox that drives the mobile nav */
 .nav-toggle-input {
     display: none;
 }
 
-/* When checkbox is checked, show the nav-links panel */
-.nav-toggle-input:checked ~ header .nav-links,
-.nav-toggle-input:checked ~ header .main-nav .nav-links {
+/* Show nav on mobile when checkbox is checked */
+.nav-toggle-input:checked ~ header .nav-links {
     display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background: var(--color-white) !important;
+    padding: 30px 20px !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+    border-radius: 0 0 24px 24px !important;
+    text-align: center !important;
+    z-index: 10000 !important;
+    animation: slideDown 0.3s ease forwards;
 }
 
-/* Animate hamburger bars into X when open */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px) scaleY(0.95); }
+    to   { opacity: 1; transform: translateY(0) scaleY(1); }
+}
+
+/* Show the Contact Us item inside mobile dropdown */
+.nav-toggle-input:checked ~ header .mobile-only-contact {
+    display: block !important;
+    margin-top: 12px;
+}
+
+/* Hamburger X animation */
 .nav-toggle-input:checked ~ header .menu-toggle span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -744,6 +766,13 @@ body.body-hero .desktop-only-contact .btn {
 .menu-toggle span {
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform-origin: center;
+}
+
+/* ── Subpage narrow header (Explore, Gallery, About, Contact) ──────────────── */
+.page-header .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -839,6 +868,7 @@ body.body-hero .desktop-only-contact .btn {
     .desktop-only-contact { display: none; }
     
     .nav-links.active {
+        /* Legacy class no longer used - kept for safety */
         display: flex !important;
         flex-direction: column !important;
         position: absolute !important;
@@ -852,8 +882,6 @@ body.body-hero .desktop-only-contact .btn {
         border-radius: 0 0 24px 24px !important;
         text-align: center !important;
         z-index: 10000 !important;
-        animation: slideDown 0.3s ease forwards;
-        transform-origin: top center;
     }
 
     @keyframes slideDown {

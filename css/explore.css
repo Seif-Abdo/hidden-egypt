@@ -1,13 +1,17 @@
 /* Additional styles for explore.html */
 .page-header {
     background-color: var(--color-bg);
-    padding: 20px 0 60px;
-    border-bottom: 1px solid rgba(30,58,95,0.05);
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(30,58,95,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .page-header .main-nav {
-    justify-content: space-between; /* Override from style.css */
-    margin-bottom: 80px;
+    justify-content: flex-end;
+    margin-bottom: 0;
+    gap: 32px;
 }
 
 .logo-container-relative {
