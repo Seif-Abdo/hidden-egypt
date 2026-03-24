@@ -586,7 +586,7 @@ input[type="radio"][name="category"] {
   .nav-links.active { display: flex; }
   
   .menu-toggle { display: flex; }
-  .btn.nav-contact { display: none; } /* Hide contact btn on extreme small inside header, let menu handle it */
+  .desktop-only-contact { display: none; } /* Ensure desktop block hides natively on small screens */
   .page-title { font-size: 2.2rem !important; }
   .split-footer { padding: 40px 20px !important; margin: 40px -20px -40px -20px !important; }
   .split-footer .footer-links { flex-direction: column; gap: 15px; }
