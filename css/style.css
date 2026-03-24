@@ -628,18 +628,7 @@ input[type="radio"][name="category"] {
     .left-panel, .left-panel-bg, .left-panel-overlay {
         z-index: 1 !important;
     }
-}
 
-
-
-
-
-/* Pristine Mobile Flow and Logo Aesthetics */
-
-
-@media (max-width: 768px) {
-  
-}
 .right-panel > .main-nav { margin-top: 20px; display: flex; justify-content: flex-end; }
 
 /* The menu toggle */
@@ -835,7 +824,7 @@ input[type="radio"][name="category"] {
 @media (max-width: 768px) {
     .right-panel > .main-nav, .page-header .main-nav, .main-nav {
         position: static !important;
-        width: 100% !important;
+        width: auto !important;
         display: flex;
         justify-content: flex-end;
     }
@@ -846,9 +835,7 @@ input[type="radio"][name="category"] {
         position: absolute !important;
         top: 100% !important; /* Immediately below the header */
         left: 0 !important;
-        right: 0 !important;
         width: 100% !important;
-        max-width: 100vw !important;
         box-sizing: border-box !important;
         background-color: var(--color-white) !important;
         padding: 30px 20px !important;
