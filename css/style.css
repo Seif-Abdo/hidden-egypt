@@ -85,6 +85,12 @@ ul {
   background-color: var(--color-secondary);
   color: var(--color-white);
   padding: 40px;
+
+  flex: 1;
+  position: relative;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,7 +103,7 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('images/home_hero_bg.jpg'); /* Placeholder: White Desert */
+  background-image: url('../images/home_hero_bg.jpg'); /* Fixed path and ensured visibility */
   background-size: cover;
   background-position: center;
   z-index: 1;
@@ -602,6 +608,7 @@ input[type="radio"][name="category"] {
   
 
 
+  
   .logo-container { top: 20px; left: 20px; z-index: 1000; }
   .main-nav { margin-top: 10px; }
   .split-container .right-panel { padding-top: 20px !important; }
@@ -654,6 +661,38 @@ input[type="radio"][name="category"] {
     background-color: transparent; 
 }
 
+/* Phase 9: Hero-Integrated Navbar for Destination Pages */
+body.body-hero .page-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+    z-index: 1000;
+}
+
+body.body-hero .nav-links li a {
+    color: var(--color-white) !important;
+}
+
+body.body-hero .img-logo {
+    filter: invert(1) brightness(1.5);
+}
+
+body.body-hero .menu-toggle span {
+    background-color: var(--color-white);
+}
+
+body.body-hero .desktop-only-contact .btn {
+    border-color: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
 @media (max-width: 768px) {
   
 
@@ -670,12 +709,14 @@ input[type="radio"][name="category"] {
   
   /* Subpages Mobile Solid Header Bar - "A space existing to prevent page design looking awful" */
   .page-header {
-      background-color: var(--color-white) !important;
-      padding: 5px 20px !important;
-      box-shadow: 0 4px 15px rgba(30, 58, 95, 0.08); /* This physically separates nav from text */
-      position: sticky;
-      top: 0;
-      z-index: 9999;
+    background-color: transparent !important; /* Transparent on mobile/subpages */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 15px rgba(30, 58, 95, 0.08); /* This physically separates nav from text */
+    position: sticky;
+    top: 0;
+    z-index: 9999;
   }
   
   /* Generic mobile dropdown handling for BOTH index and subpages */
