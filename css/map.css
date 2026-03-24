@@ -23,7 +23,7 @@
     padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
     height: 0;
     
-    background-image: url('https://images.unsplash.com/photo-1543320147-3dc61298c9dc?q=80&w=1200'); /* Bulletproof Unsplash image */
+    background-image: url('images/ras_abu_galum.jpg'); /* Bulletproof Unsplash image */
     background-size: cover;
     background-position: center;
     border-radius: 20px;
