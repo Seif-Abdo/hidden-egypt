@@ -1,16 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidden Egypt - Discover Egypt Beyond the Famous</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=2">
-</head>
-<body>
+import os, glob, codecs, re
 
-    <div class="split-container">
+print('Fixing linter errors and updating Home Page architecture...')
 
+# 1. Fix the </body> syntax error on subpages
+for file in glob.glob('*.html'):
+    with codecs.open(file, 'r', 'utf-8') as f:
+        html = f.read()
+    
+    # Another possibility: a div wasn't closed before </body>
+    div_count = html.count('<div') - html.count('</div')
+    if div_count > 0 and 'index.html' not in file:
+        print(f'{file} has {div_count} unclosed divs. Auto-closing before </body>')
+        html = html.replace('</body>', ('</div>'*div_count) + '\n</body>')
+
+    # Re-save
+    with codecs.open(file, 'w', 'utf-8') as f:
+        f.write(html)
+
+# 2. Overhaul index.html (Home Page)
+with codecs.open('index.html', 'r', 'utf-8') as f:
+    idx = f.read()
+
+# Remove old logo container from left-panel
+idx = re.sub(r'<div class="logo-container">.*?</div>', '', idx, flags=re.DOTALL)
+
+# Remove old main-nav from right-panel
+idx = re.sub(r'<nav class="main-nav">.*?</nav>', '', idx, flags=re.DOTALL)
+
+# Inject unified global header right after <body> or <div class='split-container'>
+unified_header = '''
     <!-- Unified Absolute Header -->
     <header class="home-header" style="position: absolute; top: 0; left: 0; right: 0; z-index: 1000; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center;">
         <!-- Logo -->
@@ -35,34 +53,12 @@
             </div>
         </nav>
     </header>
+'''
+if 'class="home-header"' not in idx:
+    idx = idx.replace('<div class="split-container">', '<div class="split-container">\n' + unified_header)
 
-        
-        <!-- Left Panel: Hero -->
-        <main class="left-panel">
-            <div class="left-panel-bg"></div>
-            <div class="left-panel-overlay"></div>
-            
-            <!-- Logo -->
-            
-
-            <!-- Hero Content -->
-            <div class="hero-content">
-                <h1>Discover Egypt<br>Beyond the Famous.</h1>
-                <p>A digital guide highlighting hidden gems, local experiences, and natural locations to promote sustainable tourism.</p>
-                <a href="explore.html" class="btn">Explore Now</a>
-            </div>
-        </main>
-
-        <!-- Right Panel: Navigation & Content -->
-        <aside class="right-panel">
-            
-            <!-- Navigation -->
-            
-
-            <!-- Explore Section -->
-            <section class="explore-section">
-                <h2 class="section-title">Explore</h2>
-                
+# 3. Refactor Home Page Filters
+new_tabs = '''
                 <div class="tabs-container">
                     <input type="radio" id="tab-all" name="category" checked>
                     <input type="radio" id="tab-sinai" name="category">
@@ -126,36 +122,76 @@
                         </div>
                     </div>
                 </div>
+'''
+if 'id="tab-all"' not in idx:
+    idx = re.sub(r'<div class="tabs-container">.*?</div>\s*</div>\s*</section>', new_tabs + '\n</section>', idx, flags=re.DOTALL)
 
-</section>
+with codecs.open('index.html', 'w', 'utf-8') as f:
+    f.write(idx)
 
-            <!-- Filters Preview Section -->
-            <section class="filters-preview" style="padding-bottom: 20px;">
-                <h2 class="section-title">Filters</h2>
-                <div class="filters-container">
-                    <a href="explore.html#filter-desert" class="filter-btn" style="text-decoration:none;">
-                        <div class="filter-icon">🏜️</div>
-                        <span class="filter-name">Desert</span>
-                    </a>
-                    <a href="explore.html" class="filter-btn" style="text-decoration:none;">
-                        <div class="filter-icon">🌊</div>
-                        <span class="filter-name">Oasis</span>
-                    </a>
-                    <a href="explore.html#filter-sinai" class="filter-btn" style="text-decoration:none;">
-                        <div class="filter-icon">⛰️</div>
-                        <span class="filter-name">Mountains</span>
-                    </a>
-                    <a href="explore.html#filter-nile" class="filter-btn" style="text-decoration:none;">
-                        <div class="filter-icon">🏛️</div>
-                        <span class="filter-name">History</span>
-                    </a>
-                </div>
-            </section>
-            
-        </aside>
+# Clean up CSS hacks since logo is physically cropped!
+with codecs.open('css/style.css', 'r', 'utf-8') as f:
+    css = f.read()
 
-    </div>
+# Replace .img-logo massive hacks
+css = re.sub(r'/\* Pristine Mobile Flow and Logo Aesthetics \*/.*?\.right-panel\!important', '', css, flags=re.DOTALL)
+css = re.sub(r'\.img-logo \{.*?\}', '', css, flags=re.DOTALL)
+css = re.sub(r'@media \(max-width: 768px\) \{\s*\.img-logo \{.*?\}\s*\}', '', css, flags=re.DOTALL)
 
-    <script src="js/main.js"></script>
-</body>
-</html>
+clean_logo = '''
+/* Clean Native Logo Box */
+.img-logo {
+  height: 90px;
+  max-width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: contrast(1.1) brightness(1.1);
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .img-logo { 
+      height: 60px; 
+  }
+}
+'''
+if '/* Clean Native Logo Box */' not in css:
+    css += clean_logo
+
+# Add matching tab display rules for the new tabs
+new_tab_logic = '''
+#tab-all:checked ~ .tabs-nav label[for="tab-all"],
+#tab-sinai:checked ~ .tabs-nav label[for="tab-sinai"],
+#tab-desert:checked ~ .tabs-nav label[for="tab-desert"],
+#tab-nile:checked ~ .tabs-nav label[for="tab-nile"] {
+  color: var(--color-text-dark);
+}
+
+#tab-all:checked ~ .tabs-nav label[for="tab-all"]:after,
+#tab-sinai:checked ~ .tabs-nav label[for="tab-sinai"]:after,
+#tab-desert:checked ~ .tabs-nav label[for="tab-desert"]:after,
+#tab-nile:checked ~ .tabs-nav label[for="tab-nile"]:after {
+  width: 100%;
+}
+
+#tab-all:checked ~ #content-all,
+#tab-sinai:checked ~ #content-sinai,
+#tab-desert:checked ~ #content-desert,
+#tab-nile:checked ~ #content-nile {
+  display: block;
+}
+'''
+if '#tab-all:checked' not in css:
+    css += new_tab_logic
+
+# Also fix the mobile hamburger margin
+css += '''
+@media (max-width: 768px) {
+    .home-header { padding: 20px 30px !important; }
+}
+'''
+
+with codecs.open('css/style.css', 'w', 'utf-8') as f:
+    f.write(css)
+
+print('Done rewriting Home page architecture and clearing hacks.')
