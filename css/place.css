@@ -1,7 +1,8 @@
 /* Styles for the Place Template Page */
 .place-hero {
     position: relative;
-    height: 500px;
+    height: 80vh;
+    min-height: 600px;
     width: 100%;
     margin-bottom: 60px;
     display: flex;
