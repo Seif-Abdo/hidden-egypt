@@ -79,8 +79,29 @@ input[type="radio"][name="region"] {
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
-/* Active State Logic for Chips */
-
+/* Active State Logic for Chips (JS Free) */
+/* 1. By default, 'All Regions' is active */
+#filterBtnContainer a[href="#filter-all"] {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+/* 2. But if a specific filter is clicked, un-highlight 'All Regions' */
+#filter-sinai:target ~ #filterBtnContainer a[href="#filter-all"],
+#filter-desert:target ~ #filterBtnContainer a[href="#filter-all"],
+#filter-nile:target ~ #filterBtnContainer a[href="#filter-all"] {
+    background-color: var(--color-white);
+    color: var(--color-secondary);
+}
+/* 3. And highlight the exact filter that was clicked */
+#filter-sinai:target ~ #filterBtnContainer a[href="#filter-sinai"],
+#filter-desert:target ~ #filterBtnContainer a[href="#filter-desert"],
+#filter-nile:target ~ #filterBtnContainer a[href="#filter-nile"],
+#filter-all:target ~ #filterBtnContainer a[href="#filter-all"] {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
 
 /* Grid Layout */
 .grid-container {
