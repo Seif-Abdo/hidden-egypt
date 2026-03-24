@@ -668,6 +668,11 @@ input[type="radio"][name="category"] {
     background-color: transparent; 
 }
 
+/* Force the header container to stretch fully like the home page */
+.page-header .container {
+    max-width: none !important;
+}
+
 /* Phase 9: Hero-Integrated Navbar for Destination Pages */
 body.body-hero .page-header {
     position: absolute;
