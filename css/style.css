@@ -28,6 +28,14 @@
   box-sizing: border-box;
 }
 
+/* Global Container to handle all side squishing and max widths */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
 html {
   font-family: var(--font-family);
   background-color: var(--color-bg);
@@ -657,7 +665,6 @@ input[type="radio"][name="category"] {
 
 /* Subpage Desktop Headers */
 .page-header {
-    padding: 0 40px;
     background-color: transparent; 
 }
 
@@ -774,19 +781,8 @@ body.body-hero .desktop-only-contact .btn {
     transform-origin: center;
 }
 
-/* ── Subpage narrow header (Explore, Gallery, About, Contact) ──────────────── */
-body:not(.body-hero) .page-header .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-/* Let the destination page headers stretch to layout edges */
-body.body-hero .page-header .container {
-    max-width: none;
-    width: 100%;
-    padding: 0 40px; 
-}
+/* The .container now natively handles padding and width up to 1400px, 
+   so the header elements will smoothly spread to the edges instead of bunching up. */
 
 @media (max-width: 768px) {
   
@@ -802,13 +798,13 @@ body.body-hero .page-header .container {
   .split-container .right-panel { z-index: 10; padding-top: 140px !important; }
   .split-container .left-panel { z-index: 1; }
   
-  /* Subpages Mobile Solid Header Bar - "A space existing to prevent page design looking awful" */
+  /* Subpages Mobile Solid Header Bar */
   .page-header {
-    background-color: transparent !important; /* Transparent on mobile/subpages */
+    background-color: transparent !important; 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 4px 15px rgba(30, 58, 95, 0.08); /* This physically separates nav from text */
+    box-shadow: 0 4px 15px rgba(30, 58, 95, 0.08);
     position: sticky;
     top: 0;
     z-index: 9999;
@@ -816,7 +812,7 @@ body.body-hero .page-header .container {
   
   /* Generic mobile dropdown handling for BOTH index and subpages */
   .menu-toggle { display: flex; }
-  .nav-contact { display: none !important; } 
+  /* Allow mobile menu options to display correctly */
   
   .nav-links {
       position: absolute;
@@ -836,6 +832,11 @@ body.body-hero .page-header .container {
   }
 
   .nav-links.active { display: flex; }
+  
+  /* Mobile Container Safe Padding */
+  .container {
+      padding: 0 20px !important;
+  }
 }
 
 /* FINAL QA SWEEP FIXES */
