@@ -12,7 +12,8 @@
 <body class="body-hero">
 
 
-    <header class="page-header">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
+<header class="page-header">
         <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
             <div class="logo-container-relative">
                 <a href="index.html">
@@ -27,9 +28,9 @@
                     <li><a href="about.html">About Us</a></li>
                     <li class="mobile-only-contact"><a href="contact.html" class="btn nav-contact" style="padding: 10px 24px; font-size: 0.95rem;">Contact Us</a></li>
                 </ul>
-                <div class="menu-toggle" onclick="document.getElementById('sub-nav-links').classList.toggle('active')">
+                <label class="menu-toggle" for="nav-toggle" aria-label="Toggle navigation">
                     <span></span><span></span><span></span>
-                </div>
+                </label>
                 
                 <div class="desktop-only-contact"><a href="contact.html" class="btn nav-contact" style="padding: 10px 24px; font-size: 0.95rem;">Contact Us</a></div>
             </nav>
@@ -121,10 +122,18 @@
 
                 <div class="map-miniature" style="margin-top: 40px;">
                     <h3 style="margin-bottom: 16px; color: var(--color-secondary);">Map View</h3>
-                    <a href="discover-map.html" style="display: block; border-radius: var(--border-radius); overflow: hidden; position: relative;">
-                        <img src="images/map_preview.jpg" alt="Map" style="width:100%; height: 200px; object-fit: cover; filter: brightness(0.9) contrast(1.1);">
-                        <div style="position: absolute; top: 28%; left: 77%; width: 16px; height: 16px; background: var(--color-accent); border-radius: 50%; border: 3px solid white; transform: translate(-50%, -50%);"></div>
-                    </a>
+                    <div style="border-radius: var(--border-radius); overflow: hidden; border: none; box-shadow: 0 4px 20px rgba(30,58,95,0.1);">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47000!2d34.4!3d29.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14fd2cd40d89f5b7%3A0x8d1aef6e7e3a7b9a!2sColored%20Canyon%2C%20Nuweiba!5e0!3m2!1sen!2seg!4v1"
+                            width="100%"
+                            height="280"
+                            style="border:0; display:block;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Map location">
+                        </iframe>
+                    </div>
                 </div>
             </aside>
         </div>
@@ -148,6 +157,5 @@
             <p>&copy; 2026 Hidden Egypt. All rights reserved.</p>
         </div>
     </footer>
-    <script src="js/main.js"></script>
 </body>
 </html>
