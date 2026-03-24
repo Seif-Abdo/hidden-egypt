@@ -872,6 +872,14 @@ body.body-hero .page-header .container {
         padding: 15px 20px !important; /* Essential specific fix for mobile width clipping */
     }
     
+    body.body-hero .page-header {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        box-shadow: none !important;
+        position: absolute !important;
+    }
+    
     body.body-hero .page-header .container {
         padding: 0 !important;
     }
