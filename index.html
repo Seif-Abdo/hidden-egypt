@@ -1,70 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidden Egypt - Discover Egypt Beyond the Famous</title>
+    
     <link rel="icon" type="image/png" href="images/favicon.png">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css?v=2">
 </head>
+
 <body>
 
     <div class="split-container">
 
-    <!-- Unified Absolute Header -->
-    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
-<header class="home-header" style="position: absolute; top: 0; left: 0; right: 0; z-index: 1000; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center;">
-        <!-- Logo -->
-        <a href="index.html" style="display: block;">
-            <img src="images/logo.png" alt="Hidden Egypt" class="img-logo relative-logo">
-        </a>
+        <!-- Unified Absolute Header -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
+        <header class="home-header"
+            style="position: absolute; top: 0; left: 0; right: 0; z-index: 1000; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center;">
+            <!-- Logo -->
+            <a href="index.html" style="display: block;">
+                <img src="images/logo.png" alt="Hidden Egypt" class="img-logo relative-logo">
+            </a>
 
-        <!-- Navigation -->
-        <nav class="main-nav" style="margin-bottom: 0;">
-            <ul class="nav-links" id="index-nav-links">
-                <li><a href="index.html" class="active" style="color:var(--color-secondary);">Home</a></li>
-                <li><a href="explore.html">Explore</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li class="mobile-only-contact"><a href="contact.html" class="btn nav-contact">Contact Us</a></li>
-            </ul>
-            <label class="menu-toggle" for="nav-toggle" aria-label="Toggle navigation">
-                <span></span><span></span><span></span>
-            </label>
-            <div class="desktop-only-contact">
-                <a href="contact.html" class="btn nav-contact" style="padding: 10px 24px; font-size: 0.95rem;">Contact Us</a>
-            </div>
-        </nav>
-    </header>
+            <!-- Navigation -->
+            <nav class="main-nav" style="margin-bottom: 0;">
+                <ul class="nav-links" id="index-nav-links">
+                    <li><a href="index.html" class="active" style="color:var(--color-secondary);">Home</a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="mobile-only-contact"><a href="contact.html" class="btn nav-contact">Contact Us</a></li>
+                </ul>
+                <label class="menu-toggle" for="nav-toggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </label>
+                <div class="desktop-only-contact">
+                    <a href="contact.html" class="btn nav-contact"
+                        style="padding: 10px 24px; font-size: 0.95rem;">Contact Us</a>
+                </div>
+            </nav>
+        </header>
 
-        
+
         <!-- Left Panel: Hero -->
         <main class="left-panel">
             <div class="left-panel-bg"></div>
             <div class="left-panel-overlay"></div>
-            
+
             <!-- Logo -->
-            
+
 
             <!-- Hero Content -->
             <div class="hero-content">
                 <h1>Discover Egypt<br>Beyond the Famous.</h1>
-                <p>A digital guide highlighting hidden gems, local experiences, and natural locations to promote sustainable tourism.</p>
+                <p>A digital guide highlighting hidden gems, local experiences, and natural locations to promote
+                    sustainable tourism.</p>
                 <a href="explore.html" class="btn">Explore Now</a>
             </div>
         </main>
 
         <!-- Right Panel: Navigation & Content -->
         <aside class="right-panel">
-            
+
             <!-- Navigation -->
-            
+
 
             <!-- Explore Section -->
             <section class="explore-section">
                 <h2 class="section-title">Explore</h2>
-                
+
                 <div class="tabs-container">
                     <input type="radio" id="tab-nature" name="category" checked>
                     <input type="radio" id="tab-culture" name="category">
@@ -78,70 +83,133 @@
 
                     <div id="content-nature" class="tab-content">
                         <div class="cards-slider">
-                            <a href="siwa.html" class="place-card" style="background-image: url(images/siwa_oasis.jpg);">
-                                <div class="place-card-content"><h3>Siwa Oasis</h3><p>Western Desert</p></div>
+                            <a href="siwa.html" class="place-card"
+                                style="background-image: url(images/siwa_oasis.jpg);">
+                                <div class="place-card-content">
+                                    <h3>Siwa Oasis</h3>
+                                    <p>Western Desert</p>
+                                </div>
                             </a>
-                            <a href="colored-canyon.html" class="place-card" style="background-image: url(images/colored_canyon.jpg);">
-                                <div class="place-card-content"><h3>Colored Canyon</h3><p>Nuweiba</p></div>
+                            <a href="colored-canyon.html" class="place-card"
+                                style="background-image: url(images/colored_canyon.jpg);">
+                                <div class="place-card-content">
+                                    <h3>Colored Canyon</h3>
+                                    <p>Nuweiba</p>
+                                </div>
                             </a>
-                            <a href="white-desert.html" class="place-card" style="background-image: url(images/white_desert.jpg);">
-                                <div class="place-card-content"><h3>White Desert</h3><p>Farafra</p></div>
+                            <a href="white-desert.html" class="place-card"
+                                style="background-image: url(images/white_desert.jpg);">
+                                <div class="place-card-content">
+                                    <h3>White Desert</h3>
+                                    <p>Farafra</p>
+                                </div>
                             </a>
                         </div>
                     </div>
 
                     <div id="content-culture" class="tab-content">
                         <div class="cards-slider">
-                            <a href="tunis.html" class="place-card" style="background-image: url(images/tunis_village.jpg);">
-                                <div class="place-card-content"><h3>Tunis Village</h3><p>Fayoum</p></div>
+                            <a href="tunis.html" class="place-card"
+                                style="background-image: url(images/tunis_village.jpg);">
+                                <div class="place-card-content">
+                                    <h3>Tunis Village</h3>
+                                    <p>Fayoum</p>
+                                </div>
                             </a>
-                            <a href="dendera.html" class="place-card" style="background-image: url(images/dendera_temple.jpg);">
-                                <div class="place-card-content"><h3>Dendera Temple</h3><p>Qena</p></div>
+                            <a href="dendera.html" class="place-card"
+                                style="background-image: url(images/dendera_temple.jpg);">
+                                <div class="place-card-content">
+                                    <h3>Dendera Temple</h3>
+                                    <p>Qena</p>
+                                </div>
                             </a>
                         </div>
                     </div>
 
                     <div id="content-adventure" class="tab-content">
                         <div class="cards-slider">
-                            <a href="ras-abu-galum.html" class="place-card" style="background-image: url(images/ras_abu_galum_alt.jpg);">
-                                <div class="place-card-content"><h3>Ras Abu Galum</h3><p>South Sinai</p></div>
+                            <a href="ras-abu-galum.html" class="place-card"
+                                style="background-image: url(images/ras_abu_galum_alt.jpg);">
+                                <div class="place-card-content">
+                                    <h3>Ras Abu Galum</h3>
+                                    <p>South Sinai</p>
+                                </div>
                             </a>
-                            <a href="colored-canyon.html" class="place-card" style="background-image: url(images/colored_canyon.jpg);">
-                                <div class="place-card-content"><h3>Colored Canyon</h3><p>Nuweiba</p></div>
+                            <a href="colored-canyon.html" class="place-card"
+                                style="background-image: url(images/colored_canyon.jpg);">
+                                <div class="place-card-content">
+                                    <h3>Colored Canyon</h3>
+                                    <p>Nuweiba</p>
+                                </div>
                             </a>
-                            <a href="white-desert.html" class="place-card" style="background-image: url(images/white_desert.jpg);">
-                                <div class="place-card-content"><h3>White Desert</h3><p>Farafra</p></div>
+                            <a href="white-desert.html" class="place-card"
+                                style="background-image: url(images/white_desert.jpg);">
+                                <div class="place-card-content">
+                                    <h3>White Desert</h3>
+                                    <p>Farafra</p>
+                                </div>
                             </a>
                         </div>
                     </div>
                 </div>
-</section>
+            </section>
 
             <!-- Filters Preview Section -->
             <section class="filters-preview" style="padding-bottom: 20px;">
                 <h2 class="section-title">Filters</h2>
-                                <div class="filters-container">
+                <div class="filters-container">
                     <a href="explore.html" class="filter-btn" style="text-decoration:none;">
-                        <div class="filter-icon" style="color: var(--color-secondary);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg></div>
+                        <div class="filter-icon" style="color: var(--color-secondary);"><svg width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
+                                <path d="M2 12h20"></path>
+                            </svg></div>
                         <span class="filter-name">All Regions</span>
                     </a>
                     <a href="explore.html#filter-sinai" class="filter-btn" style="text-decoration:none;">
-                        <div class="filter-icon" style="color: var(--color-secondary);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l4 8 5-5 5 15H2L8 3z"></path></svg></div>
+                        <div class="filter-icon" style="color: var(--color-secondary);"><svg width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M8 3l4 8 5-5 5 15H2L8 3z"></path>
+                            </svg></div>
                         <span class="filter-name">Sinai</span>
                     </a>
                     <a href="explore.html#filter-desert" class="filter-btn" style="text-decoration:none;">
-                        <div class="filter-icon" style="color: var(--color-secondary);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></div>
+                        <div class="filter-icon" style="color: var(--color-secondary);"><svg width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg></div>
                         <span class="filter-name">Desert</span>
                     </a>
                     <a href="explore.html#filter-nile" class="filter-btn" style="text-decoration:none;">
-                        <div class="filter-icon" style="color: var(--color-secondary);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c5 0 5 4 10 4s5-4 10-4M2 18c5 0 5 4 10 4s5-4 10-4M2 6c5 0 5 4 10 4s5-4 10-4"></path></svg></div>
+                        <div class="filter-icon" style="color: var(--color-secondary);"><svg width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M2 12c5 0 5 4 10 4s5-4 10-4M2 18c5 0 5 4 10 4s5-4 10-4M2 6c5 0 5 4 10 4s5-4 10-4">
+                                </path>
+                            </svg></div>
                         <span class="filter-name">Nile Valley</span>
                     </a>
                 </div>
             </section>
-            
+
         </aside>
 
     </div>
 </body>
+
 </html>
